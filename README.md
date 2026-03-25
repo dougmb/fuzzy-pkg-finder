@@ -1,8 +1,10 @@
  <div align="right">
     <img src="https://img.shields.io/static/v1?label=Language&message=shell&color=%235BB97E&style=flat-square"/>
-    <img src="https://img.shields.io/github/license/ericlay/fuzzy-pkg-finder?color=%235BB97E&label=LIC&style=flat-square"/>
+    <img src="https://img.shields.io/github/license/dougmb/fuzzy-pkg-finder?color=%235BB97E&label=LIC&style=flat-square"/>
 </div>
- <div align="center"><h1>📦<br>Fuzzy-pkg-finder</h1></div>
+ <div align="center"><h1>📦<br>Fuzzy-pkg-finder (fork)</h1></div>
+
+> Fork of [ericlay/fuzzy-pkg-finder](https://github.com/ericlay/fuzzy-pkg-finder), which is no longer maintained.
 
 **Simple cli utility using fzf to search and install/list/remove packages.**\
  \
@@ -13,29 +15,20 @@ On selection will hand off to Pacman or Paru/Yay to complete transaction. \
   \
 *For use with Pacman/Yay/Paru package managers only.*\
  \
-There are countless fzf package manager wrappers out there, some much more built out that this. \
-What separates Fuzzy-pkg-finder?
-- It's mine and it works the way I like it to
-- It works as a simple script to wrap pacman/yay/paru, no need to rebuild the wheel
-- Searches both package names and descriptions for keyword
-- Hide preview window to see only packages and descriptions
-- Shows files list and/or missing files for official repo or installed AUR packages
-- Toggle between package info view and PKGBUILD view on AUR package preview
-- Update feature shows package information and link to recent commits \
- \
+
+### Changes from upstream
+- Fix preview commands failing on non-bash shells (fish, zsh) due to process substitution `<()` syntax
+
  \
 Installation: \
-For Arch and arch-based distros, it is available in the AUR. \
-Use: `paru -S fuzzy-pkg-finder` or `yay -S fuzzy-pkg-finder` \
- \
 Manual build and install:
 ```
-git clone https://github.com/ericlay/fuzzy-pkg-finder
+git clone https://github.com/dougmb/fuzzy-pkg-finder
 cd fuzzy-pkg-finder
 makepkg -sric
 ```
  \
-Usage: 
+Usage:
 ```
 Syntax: fpf [-a| --aur] [-l| --list-installed] [-la| --list-aur-installed]
               [R| --remove] [-o| --orphans] [-U | --update] [-h | --help]
@@ -53,7 +46,7 @@ Options:
     Search/List installed packages from official repo
 
 -la, --list-aur-installed
-    Search/List installed packages from AUR 
+    Search/List installed packages from AUR
 
 -R, -remove
      Search/List installed packages for removal
