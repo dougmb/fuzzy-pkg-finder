@@ -1,6 +1,9 @@
 #!/usr/bin/bash
 
-### Help 
+# Force fzf to use bash for preview commands (process substitution <() is bash-only)
+export SHELL=/bin/bash
+
+### Help
 Help() {
     helpF="/tmp/fpf-help"
     { printf "\n%s\n" "Use fzf to search and install with Pacman or Yay/Paru"
